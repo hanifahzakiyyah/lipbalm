@@ -1,7 +1,18 @@
 // HeroSection.jsx
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
+  const [nama, setNama] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const namaDariUrl = params.get("kpd");
+    if (namaDariUrl) {
+      setNama(namaDariUrl);
+    }
+  }, []);
+
   return (
     <section className="bg-gradient-to-b from-pink-50 to-white">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
@@ -16,18 +27,16 @@ export default function Hero() {
             💋 Lip Balm Alami Premium
           </h1>
           <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-            Bismillah, perkenalkan… namaku <span className="font-semibold">Fathimah QA</span>. 
-            Aku seorang herbalist yang telah mempelajari berbagai ramuan alami dari bahan-bahan tradisional, 
-            serta memproduksi sabun dan produk herbal perawatan kulit sejak tahun <em>(isi sendiri)</em>.  
+            Bismillah, Halo Kak <span className="font-bold capitalize"> {nama && ` ${nama}`} </span> <br /> kenalin aku <span className="font-semibold">Fathimah QA</span>, 
+            seorang herbalist yang udah lama menekuni ramuan alami, bikin sabun, dan produk herbal perawatan kulit sejak tahun .....
           </p>
           <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-            Alhamdulillah, hari ini aku ingin memperkenalkan produk baruku — 
+            Alhamdulillah, Hari ini aku super excited karena mau ngenalin karya baruku:  
             <span className="font-semibold text-pink-600"> Lip Balm Alami dengan minyak buah merah Papua</span>, 
-            diracik khusus untuk melembapkan dan merawat bibir tanpa pewarna, pewangi, atau perisa buatan.
+            diracik khusus untuk melembapkan, menutrisi, dan merawat bibir tanpa bahan kimia berbahaya, pewarna sintetis, pewangi, atau perisa buatan.
           </p>
           <p className="mt-4 text-lg text-gray-700 leading-relaxed italic">
-            “Jangan beli kalau nggak yakin, jangan beli kalau cuma ‘nggak enakan’.  
-            Belilah kalau kamu benar-benar ingin mencoba… dan rasakan sendiri khasiatnya.”
+            “Jangan beli kalau nggak yakin. Jangan beli karena ‘nggak enakan’. Belilah kalau kamu benar-benar mau mencoba… dan rasakan sendiri khasiatnya.” 💖
           </p>
           
           <motion.button

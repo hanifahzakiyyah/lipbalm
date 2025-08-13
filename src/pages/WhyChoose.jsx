@@ -41,7 +41,7 @@ export default function WhyChoose() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-center text-gray-900"
         >
-          Kenapa Pilih Lip Balm Ini?
+          🌟 Kenapa Lip Balm Ini Spesial?
         </motion.h2>
 
         <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
